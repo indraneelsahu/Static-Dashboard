@@ -1,0 +1,69 @@
+---
+title: "Comparitive State Index"
+# author: "IndraneelSahu"
+# date: "6/25/2020"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+    source_code: embed
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(knitr)
+library(DT)
+library(rpivotTable)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(openintro)
+library(highcharter)
+library(ggvis)
+library(readxl)
+```
+
+
+```{r}
+Data <- read_excel("Data.xlsx")
+```
+
+```{r}
+mycolors <- c("blue", "#FFC125", "darkgreen", "darkorange")
+```
+CSI
+=====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+Data
+
+```
+
+Law and Order
+=====================================
+
+Education
+=====================================
+
+Healthcare
+====================================
+
+Economy
+====================================
+
+Inclusive Development
+====================================
+
+Business Friendliness
+====================================
+
+Employment and Skill
+====================================
+
+Sustainability and Environment
+===================================
+
+Infrastructure
+===================================
