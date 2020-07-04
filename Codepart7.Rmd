@@ -1,0 +1,141 @@
+---
+title: "Comparitive State Index"
+# author: "IndraneelSahu"
+# date: "6/25/2020"
+output:
+  flexdashboard::flex_dashboard:
+    #orientation: columns
+    horizontal_layout: scroll
+    vertical_layout: scroll
+
+   # source_code: embed
+  # html_document:
+  # df_print: paged
+---
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(knitr)
+library(DT)
+library(rpivotTable)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(openintro)
+library(highcharter)
+library(ggvis)
+library(readxl)
+library(googleVis)
+```
+
+
+```{r}
+#mycolors <- c("blue", "#FFC125", "darkgreen", "darkorange")
+```
+CSI {data-orientation=columns}
+=====================================
+
+-------------------------------------
+
+### Visualisation {data-height=800}
+
+```{r}
+Data <- read_excel("FinalScoresData.xlsx")
+rpivotTable(Data,aggregatorName = "Maximum",cols= "NULL",rows = "State",rendererName = "Horizontal Stacked Bar Chart", width="100%", height="100px")
+#Data <- read_excel("Data.xlsx")
+```
+
+--------------------------------------------- 
+ 
+### Raw Data {data-height=200}
+
+```{r}
+Data <- read_excel("FinalScoresData.xlsx")
+datatable(
+  Data, extensions = 'Buttons', options = list(
+    dom = 'Bfrtip',
+    buttons = c('csv', 'excel', 'pdf', 'print'),
+    options = list(pageLength = 10)
+
+  )
+)
+```
+
+Law and Order
+=====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+datatable(
+  Data, extensions = 'Buttons', options = list(
+    dom = 'Bfrtip',
+    buttons = c('copy', 'csv', 'excel', 'pdf', 'print'),
+    options = list(pageLength = 10)
+  )
+)
+```
+
+Education
+=====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+datatable(Data,
+          caption = "State Wise Data For Education and Environment",
+          rownames = T,
+          filter = "top",
+          options = list(pageLength = 10))
+```
+
+Healthcare
+====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+datatable(Data,
+          caption = "State Wise Data For Education and Environment",
+          rownames = T,
+          filter = "top",
+          options = list(pageLength = 10))
+```
+
+Economy
+====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+datatable(Data,
+          caption = "State Wise Data For Education and Environment",
+          rownames = T,
+          filter = "top",
+          options = list(pageLength = 10))
+```
+
+Inclusive Development
+====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+datatable(Data,
+          caption = "State Wise Data For Education and Environment",
+          rownames = T,
+          filter = "top",
+          options = list(pageLength = 10))
+```
+
+Business Friendliness
+====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+datatable(Data,
+          caption = "State Wise Data For Education and Environment",
+          rownames = T,
+          filter = "top",
+          options = list(pageLength = 10))
+```
+
+Employment and Skill
+====================================
+```{r}
+Data <- read_excel("Data.xlsx")
+datatable(Data,
+          caption = "State Wise Data For Education and Environment",
+          rownames = T,
+          filter = "top",
+          options = list(pageLength = 10))
+```
+
